@@ -1,0 +1,7 @@
+<Simulation version="3.6.2">
+   <XMLScript Type="XMLScript">Simulation/WTcontrol.xml</XMLScript>
+   <PythonScript Type="PythonScript">Simulation/WTcontrol.py</PythonScript>
+   <PIFFile Type="PIFFile">Simulation/WTcontrol.piff</PIFFile>
+   <Resource Type="Python">Simulation/WTcontrolSteppables.py</Resource>
+   <ParameterScan Type="ParameterScan">Simulation/ParameterScanSpecs.xml</ParameterScan>
+</Simulation>

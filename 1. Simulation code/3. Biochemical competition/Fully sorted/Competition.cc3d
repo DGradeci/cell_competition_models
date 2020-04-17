@@ -1,0 +1,7 @@
+<Simulation version="3.6.2">
+   <XMLScript Type="XMLScript">Simulation/Competition.xml</XMLScript>
+   <PythonScript Type="PythonScript">Simulation/Competition.py</PythonScript>
+   <PIFFile Type="PIFFile">Simulation/Competition.piff</PIFFile>
+   <Resource Type="Python">Simulation/CompetitionSteppables.py</Resource>
+   <ParameterScan Type="ParameterScan">Simulation/ParameterScanSpecs.xml</ParameterScan>
+</Simulation>

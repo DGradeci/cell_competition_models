@@ -1,0 +1,91 @@
+<CompuCell3D version="3.6.2">
+   
+   <Potts>
+      
+      <!-- Basic properties of CPM (GGH) algorithm -->
+      <Dimensions x="2000" y="1000" z="1"/>
+      <Steps>10000</Steps>
+      <Temperature>10.0</Temperature>
+      <NeighborOrder>1</NeighborOrder>
+   </Potts>
+   
+   <Plugin Name="CellType">
+      
+      <!-- Listing all cell types in the simulation -->
+      <CellType TypeId="0" TypeName="Medium"/>
+      <CellType TypeId="1" TypeName="1"/>
+      <CellType TypeId="2" TypeName="2"/>
+      <CellType TypeId="3" TypeName="3"/>
+      <CellType TypeId="4" TypeName="Wall" Freeze=""/>
+      <CellType TypeId="5" TypeName="5"/>
+      <CellType TypeId="6" TypeName="6"/>
+   </Plugin>
+   
+   <Plugin Name="Volume">
+<!--       <VolumeEnergyParameters CellType="1" LambdaVolume="2.0" TargetVolume="1600"/> -->
+<!--       <VolumeEnergyParameters CellType="2" LambdaVolume="2.0" TargetVolume="1600"/> -->
+<!--       <VolumeEnergyParameters CellType="3" LambdaVolume="2.0" TargetVolume="1600"/> -->
+<!--       <VolumeEnergyParameters CellType="5" LambdaVolume="2.0" TargetVolume="0"/> -->
+<!--       <VolumeEnergyParameters CellType="Wall" LambdaVolume="2.0" TargetVolume="1600"/> -->
+   </Plugin>
+   
+   <Plugin Name="CenterOfMass">
+      
+      <!-- Module tracking center of mass of each cell -->
+   </Plugin>
+   
+   <Plugin Name="ExternalPotential">
+      <!-- External force applied to cell. Each cell has different force and force components have to be managed in Python. -->
+      <!-- e.g. cell.lambdaVecX=0.5; cell.lambdaVecY=0.1 ; cell.lambdaVecZ=0.3; -->
+      <Algorithm>CenterOfMassBased</Algorithm>  
+   </Plugin>
+   
+<!--    <Plugin Name="NeighborTracker"> -->    
+<!--    </Plugin> -->
+   
+   
+   <Plugin Name="Contact">
+      <!-- Specification of adhesion energies -->
+      <Energy Type1="Medium" Type2="Medium">8.0</Energy>
+      <Energy Type1="Medium" Type2="1">15.0</Energy>
+      <Energy Type1="Medium" Type2="2">15.0</Energy>
+      <Energy Type1="Medium" Type2="3">15.0</Energy>
+      <Energy Type1="Medium" Type2="Wall">15.0</Energy>
+      <Energy Type1="Medium" Type2="5">15.0</Energy>
+      <Energy Type1="Medium" Type2="6">15.0</Energy>
+      <Energy Type1="1" Type2="1">8.0</Energy>
+      <Energy Type1="1" Type2="2">8.0</Energy>
+      <Energy Type1="1" Type2="3">8.0</Energy>
+      <Energy Type1="1" Type2="Wall">8.0</Energy>
+      <Energy Type1="1" Type2="5">8.0</Energy>
+      <Energy Type1="1" Type2="6">15.0</Energy>
+      <Energy Type1="2" Type2="2">8.0</Energy>
+      <Energy Type1="2" Type2="3">8.0</Energy>
+      <Energy Type1="2" Type2="Wall">8.0</Energy>
+      <Energy Type1="2" Type2="5">8.0</Energy>
+      <Energy Type1="2" Type2="6">8.0</Energy>
+      <Energy Type1="3" Type2="3">8.0</Energy>
+      <Energy Type1="3" Type2="Wall">8.0</Energy>
+      <Energy Type1="3" Type2="5">8.0</Energy>
+      <Energy Type1="3" Type2="6">8.0</Energy>
+      <Energy Type1="Wall" Type2="Wall">8.0</Energy>
+      <Energy Type1="Wall" Type2="5">8.0</Energy>
+      <Energy Type1="Wall" Type2="6">8.0</Energy>
+      <Energy Type1="5" Type2="5">8.0</Energy>
+      <Energy Type1="5" Type2="6">8.0</Energy>
+      <Energy Type1="6" Type2="6">8.0</Energy>
+      <NeighborOrder>1</NeighborOrder>
+   </Plugin>
+   
+   <Steppable Type="UniformInitializer">      
+      <Region>
+         <BoxMin x="400" y="400" z="0"/>
+         <BoxMax x="600" y="600" z="1"/>
+         <Gap>10</Gap>
+         <Width>2</Width>
+         <Types>1</Types>
+      </Region>
+   </Steppable>
+
+
+</CompuCell3D>

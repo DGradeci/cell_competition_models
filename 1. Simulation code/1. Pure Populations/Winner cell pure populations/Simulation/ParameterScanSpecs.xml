@@ -1,0 +1,8 @@
+<ParameterScan version="3.7.0">
+   <OutputDirectory>WTcontrol_Adder_ParameterScan</OutputDirectory>
+   <ParameterList Resource="Simulation/WTcontrolSteppables.py">
+      <Parameter CurrentIteration="2" Name="growthratewt" Type="PYTHON_GLOBAL" ValueType="float">
+         <Values>6.0,6.0,6.0,6.0,6.0,6.0,6.0,6.0</Values>
+      </Parameter>
+   </ParameterList>
+</ParameterScan>

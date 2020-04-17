@@ -1,0 +1,8 @@
+<ParameterScan version="3.7.0">
+   <OutputDirectory>Competition_ParameterScan</OutputDirectory>
+   <ParameterList Resource="Simulation/CompetitionSteppables.py">
+      <Parameter CurrentIteration="16" Name="CI" Type="PYTHON_GLOBAL" ValueType="float">
+         <Values>0.0001,0.0001,0.0001,0.0001,0.0001,0.001,0.001,0.001,0.001,0.001,0.01,0.01,0.01,0.01,0.01,0.1,0.1,0.1,0.1,0.1,1.0,1.0,1.0,1.0,1.0</Values>
+      </Parameter>
+   </ParameterList>
+</ParameterScan>
